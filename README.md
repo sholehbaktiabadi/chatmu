@@ -29,6 +29,12 @@
 ## Installation
 
 ```bash
+$ node version 18.12.1
+```
+
+## Installation
+
+```bash
 $ npm install
 ```
 

@@ -19,7 +19,7 @@ export class EventService {
     });
   }
 
-  onNewMessage(@MessageBody() body: P2PDto, channel: string) {
+  directMessage(@MessageBody() body: P2PDto, channel: string) {
     this.server.emit(channel, body); // channel is combined by id sender with id reciever
   }
 }

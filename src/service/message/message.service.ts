@@ -27,7 +27,7 @@ export class MessageService {
     dto.channel = joinId.toString();
     dto.sender = user.id;
     dto.receiver = selectUserByEmail.id;
-    this.eventService.onNewMessage(
+    this.eventService.directMessage(
       {
         message: dto.message,
         type: 'personal',

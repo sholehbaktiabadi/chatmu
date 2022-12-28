@@ -30,7 +30,7 @@ export class MessageService {
     this.eventService.directMessage(
       {
         message: dto.message,
-        type: 'personal',
+        type: 'direct',
         senderName: user.username,
         receiverName: selectUserByEmail.username,
         senderID: dto.sender,

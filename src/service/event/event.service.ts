@@ -22,4 +22,8 @@ export class EventService {
   directMessage(@MessageBody() body: P2PDto, channel: string) {
     this.server.emit(channel, body); // channel is combined by id sender with id reciever
   }
+
+  groupMessage(@MessageBody() body: P2PDto, channel: string) {
+    this.server.emit(channel, body); // channel is combined by id sender with id reciever
+  }
 }

@@ -6,6 +6,10 @@ import { EventModule } from './service/event/event.module';
 import { AuthModule } from './service/auth/auth.module';
 import { MessageModule } from './service/message/message.module';
 import { Message } from './service/message/entity/message.entity';
+import { GroupModule } from './service/group/group.module';
+import { Group } from './service/group/entity/group.entity';
+import { GroupMessage } from './service/group/entity/group-message.entity';
+import { GroupJoin } from './service/group/entity/group-join.entity';
 
 @Module({
   imports: [
@@ -16,13 +20,14 @@ import { Message } from './service/message/entity/message.entity';
       username: 'postgres',
       password: 'root',
       database: 'chatmu',
-      entities: [User, Message],
+      entities: [User, Message, Group, GroupMessage, GroupJoin],
       synchronize: true,
     }),
     AuthModule,
     EventModule,
     UserModule,
     MessageModule,
+    GroupModule,
   ],
 })
 export class AppModule {}

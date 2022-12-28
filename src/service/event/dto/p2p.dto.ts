@@ -1,8 +1,8 @@
 export class P2PDto {
   message: string;
   senderName: string;
-  receiverName: string;
+  receiverName?: string;
   senderID: number;
-  receiverID: number;
+  receiverID?: number;
   type: string;
 }

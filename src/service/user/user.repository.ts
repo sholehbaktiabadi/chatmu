@@ -13,4 +13,8 @@ export class UserRepository {
   async getOne(id: number) {
     return await this.db.getRepository(User).findOne({ where: { id } });
   }
+
+  async findOneByEmail(email: string) {
+    return await this.db.getRepository(User).findOne({ where: { email } });
+  }
 }

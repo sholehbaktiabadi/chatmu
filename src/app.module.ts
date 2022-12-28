@@ -4,6 +4,8 @@ import { User } from './service/user/entity/user.entity';
 import { UserModule } from './service/user/user.module';
 import { EventModule } from './service/event/event.module';
 import { AuthModule } from './service/auth/auth.module';
+import { MessageModule } from './service/message/message.module';
+import { Message } from './service/message/entity/message.entity';
 
 @Module({
   imports: [
@@ -14,12 +16,13 @@ import { AuthModule } from './service/auth/auth.module';
       username: 'postgres',
       password: 'root',
       database: 'chatmu',
-      entities: [User],
+      entities: [User, Message],
       synchronize: true,
     }),
     AuthModule,
     EventModule,
     UserModule,
+    MessageModule,
   ],
 })
 export class AppModule {}

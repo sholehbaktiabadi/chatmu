@@ -5,6 +5,7 @@ import {
   MessageBody,
 } from '@nestjs/websockets';
 import { Server } from 'socket.io';
+import { P2PDto } from './dto/p2p.dto';
 
 @Injectable()
 @WebSocketGateway()
@@ -18,11 +19,7 @@ export class EventService {
     });
   }
 
-  onNewMessage(@MessageBody() body: any) {
-    this.server.emit('chatRoom', body);
+  onNewMessage(@MessageBody() body: P2PDto, channel: string) {
+    this.server.emit(channel, body); // channel is combined by id sender with id reciever
   }
-
-  // onNewMessage(@MessageBody() body: any, channel: string) {
-  //   this.server.emit(channel, body); // channel is combined by id sender with id reciever
-  // }
 }

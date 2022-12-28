@@ -19,7 +19,7 @@ import { AuthModule } from './service/auth/auth.module';
     }),
     AuthModule,
     EventModule,
-    UserModule
-  ]
+    UserModule,
+  ],
 })
 export class AppModule {}

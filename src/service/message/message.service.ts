@@ -40,4 +40,8 @@ export class MessageService {
     );
     return await this.messageRepository.createDirectMessage(dto);
   }
+
+  async getChannel(user: number){
+    return await this.messageRepository.getChannel(user)
+  }
 }

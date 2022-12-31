@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { MessageService } from './message.service';
 import { JwtAuthGuard } from '../auth/auth-jwt.guard';
 import { MessageDto } from './dto/message.dto';
@@ -15,5 +15,10 @@ export class MessageController {
       { id: req.user.id, username: req.user.username },
       dto,
     );
+  }
+
+  @Get('channel')
+  async getChannel(@Req() req: Request) {
+    return await this.messageService.getChannel(req.user.id);
   }
 }

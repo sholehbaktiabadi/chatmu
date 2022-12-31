@@ -8,7 +8,7 @@ import { Server } from 'socket.io';
 import { P2PDto } from './dto/p2p.dto';
 
 @Injectable()
-@WebSocketGateway()
+@WebSocketGateway({ cors: '*:*' })
 export class EventService {
   @WebSocketServer()
   server: Server;
